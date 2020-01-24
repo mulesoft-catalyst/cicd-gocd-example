@@ -22,6 +22,9 @@ Alpine based image was choosen for the agent due the minimum size and requiremen
 docker pull gocd/gocd-agent-alpine-3.9
 ```
 
+### Plugins Config
+https://github.com/ruckc/gocd-maven-plugin/releases/tag/0.1.1
+
 # Pipeline Config
 
 ## Build Pipeline
