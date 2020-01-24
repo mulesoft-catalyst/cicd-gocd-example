@@ -13,8 +13,9 @@ This is an official image for GoCD.
 
 ## GoCD Config
 
+### Server Config
 
-
+### Agent Config
 
 # Pipeline Config
 
