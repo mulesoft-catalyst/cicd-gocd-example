@@ -23,7 +23,14 @@ docker pull gocd/gocd-agent-alpine-3.9
 ```
 
 ### Plugins Config
+1) Download jar file from
 https://github.com/ruckc/gocd-maven-plugin/releases/tag/0.1.1
+
+2) Enter thee following location in container: /godata/plugins/external (Server)
+
+3) Copy the jar in this location
+
+4) Restart the server
 
 # Pipeline Config
 
