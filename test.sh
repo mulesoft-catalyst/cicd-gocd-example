@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "This is only a test"
+mvn clean package
