@@ -1,3 +1,4 @@
 #!/bin/bash
 
-mvn clean package
+mvn deploy \
+-Dusername=$username
