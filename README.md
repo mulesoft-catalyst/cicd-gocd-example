@@ -36,6 +36,14 @@ After installed, verify it running
 mvn -version
 ```
 
+#### Downgrading to JDK 8 (Optional)
+```
+apt-get install openjdk-8-jre
+```
+```
+update-alternatives --config java
+```
+
 ### Plugins Config (Optional)
 There is a community plugin to run maven commands. This is out of scope of this article, however, just in case:
 1) Download jar file from
