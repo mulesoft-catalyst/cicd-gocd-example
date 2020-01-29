@@ -37,6 +37,8 @@ mvn -version
 ```
 
 #### Downgrading to JDK 8 (Optional)
+For this example we have as a prerequisite to use openjdk 8 instead of openjdk 11 so we need to downgrade the Open JDK version. The commands are:
+
 ```
 apt-get install openjdk-8-jre
 ```
@@ -55,11 +57,12 @@ https://github.com/ruckc/gocd-maven-plugin/releases/tag/0.1.1
 # Pipeline Config
 
 ## Build Pipeline
-WIP
-- ...
-	> ...
+This pipeline will package and test the application. For the sake of simplicity of this how-to, we'll keep the generated artifact in the GoCD filesystem, without versioning the binary using an external repo like Jfrog Artifactory or Nexus. However, it's strongly recommended to do that.
+
+- To create a pipeline click on ...
+	> 
 
 ## Release Pipeline
-WIP
+This pipeline will get the 
 - ...
 	> ...
