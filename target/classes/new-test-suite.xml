@@ -10,7 +10,7 @@
 	<munit:config name="new-test-suite.xml" />
 	<munit:test name="new-test-suite-example-pipeline-gocdFlowTest" description="Test" doc:id="aec8f1b1-7870-4c22-8697-98133497c12a" >
 		<munit:execution >
-			<flow-ref doc:name="Flow-ref to example-pipeline-gocdFlow" doc:id="16e5613a-4377-4f4f-9db1-f6cfa3beb0e2" name="example-pipeline-gocdFlow"/>
+			<flow-ref doc:name="Flow-ref to example-pipeline-gocdFlow" doc:id="16e5613a-4377-4f4f-9db1-f6cfa3beb0e2" name="healtcheck"/>
 		</munit:execution>
 	</munit:test>
 
