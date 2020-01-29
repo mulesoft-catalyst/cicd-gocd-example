@@ -109,6 +109,8 @@ This pipeline will get the packaged application (.jar) deloy it to Anypoint Plat
 					- Add the needed secure variables. Following the exampple for a CloudHub deployment:
 					    - username
 						- password
+					
+					![Alt text](images/env-variables.png)
 
 					- Click "Save"
 			- Click on the "Tasks" tab
