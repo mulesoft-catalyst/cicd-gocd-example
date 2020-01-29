@@ -59,19 +59,12 @@
 					</execution>
 				</executions>
 				<configuration>
-					<dynamicPorts>
-						<dynamicPort>https.port</dynamicPort>
-					</dynamicPorts>
 					<runtimeProduct>MULE_EE</runtimeProduct>
 					<runtimeVersion>${app.runtime}</runtimeVersion>
 					<coverage>
 						<runCoverage>true</runCoverage>
 						<failBuild>true</failBuild>
 						<requiredApplicationCoverage>${munit.required.coverage}</requiredApplicationCoverage>
-						<ignoreFiles>
-							<ignoreFile>sys-hris-timeentry-wf-api-error.xml</ignoreFile>
-							<ignoreFile>email-notification.xml</ignoreFile>
-						</ignoreFiles>
 						<formats>
 							<format>html</format>
 							<format>console</format>
