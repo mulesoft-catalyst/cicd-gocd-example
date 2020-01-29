@@ -120,6 +120,8 @@ This pipeline will get the packaged application (.jar) deloy it to Anypoint Plat
 					- Check to run only if previous condition was passed (the deployment)
 					- Click "Save"
 
+					![Alt text](images/pipeline-created.png)
+
 
 # Running the pipeline
 
