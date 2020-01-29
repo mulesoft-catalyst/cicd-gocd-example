@@ -4,11 +4,11 @@ A example pieline usign GoCD like CI Server tool.
 
 # The example App
 For this a simple Mule app will be used, containing:
-	- HTTP Lister listening on port 8081
-	- Path under /api/v1/
-	- Only one resource called healthcheck which will be used for connectivity testing after deployment
-	- Mule Maven Plugin with the cloudhubDeployment	configuration applied
-	- MUnit simple test to perform MUnit testing before packaging the app
+   - HTTP Lister listening on port 8081
+   - Path under /api/v1/
+   - Only one resource called healthcheck which will be used for connectivity testing after deployment
+   - Mule Maven Plugin with the cloudhubDeployment	configuration applied
+   - MUnit simple test to perform MUnit testing before packaging the app
 
 
 # Environment Config
@@ -125,8 +125,14 @@ This pipeline will get the packaged application (.jar) deloy it to Anypoint Plat
 
 # Running the pipeline
 
-After configuring the pipeline you can go to "Dashboard" and click on the Start icon for your pipeline. Or simply change your code and push the changes to the Github repo.
+After configuring the pipeline you can go to "Dashboard" and click on the Start icon for your pipeline. Or simply change your code and push the changes to the Github repo so the pipeline can start.
 
+![Alt text](images/pipeline-running.png)
+
+Once complete the execution of the pipeline, you can check the output of each of the stages clicking on them. For example for deploy-and-test:
+
+![Alt text](images/deploy-output.png)
+![Alt text](images/testing-app-output.png)
 
 
 
