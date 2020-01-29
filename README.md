@@ -23,6 +23,11 @@ For this example we will use a containairized version of GoCD Server and Agent, 
 docker pull gocd/gocd-server
 ```
 
+After running the image and accesing the UI url we'll get:
+![Alt text](images/server-starting.png)
+Once the server gets started, you'll see the following button in the upper center of the screen:
+![Alt text](images/server-ready.png)
+
 ### Agent Config
 A custom image based on Ubuntu was choosen because it contains Java and cUrl already installed and run under user root by default.
 Alpine based and other official versions images are available too.
@@ -30,6 +35,9 @@ Alpine based and other official versions images are available too.
 ```
 docker pull jrandall/gocd-agent-ubuntu-18.04-docker
 ```
+
+Before starting the Agent make sure the GO_SERVER_URL environment variable is configured pointing to the image where the server is running.
+
 #### Installing Maven
 
 ```
