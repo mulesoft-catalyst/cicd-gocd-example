@@ -36,10 +36,9 @@
 						<properties>
 							<env>${env}</env>
 						</properties>
-						<region>us-west-1</region>
-						<workerType>MICRO</workerType>
-						<workers>1</workers>
-						<persistentQueues>false</persistentQueues>
+						<region>${region}</region>
+						<workerType>${workerType}</workerType>
+						<workers>${workers}</workers>
 					</cloudHubDeployment>
 					<classifier>mule-application</classifier>
 				</configuration>

@@ -2,6 +2,14 @@
 
 A example pieline usign GoCD like CI Server tool.
 
+# The example App
+For this a simple Mule app will be used, containing:
+	- HTTP Lister listening on port 8081
+	- Path under /api/v1/
+	- Only one resource called healthcheck which will be used for connectivity testing after deployment
+	- Mule Maven Plugin with the cloudhubDeployment	configuration applied
+	- MUnit simple test to perform MUnit testing before packaging the app
+
 
 # Environment Config
 
@@ -56,7 +64,7 @@ https://github.com/ruckc/gocd-maven-plugin/releases/tag/0.1.1
 
 # Pipeline Config
 
-We'll use one single pipeline with different stages on it. One single material configured (Github) will trigger the execution of this simple pipeline.
+The propossed pipeline is a simple MVP to show how to integrate with Mule. This means we'll use one single pipeline with different stages on it. One single material configured (Github) will trigger the execution of this simple pipeline. 
 
 - To create a pipeline click on "+ Add new pipeline"
 	- First of all, configure a new material of type "git". Grab the repo url (HTTPS can be used) and paste it inside the Repository URL field
@@ -93,10 +101,13 @@ This pipeline will get the packaged application (.jar) deloy it to Anypoint Plat
 				- Click on "mvn-deploy"
 					- Click on "Environment Variables" tab
 					- Enter the Mule Maven Plugin variables for the deloyment config. For example, for CloudHub:
-						- username
 						- environment (cloudhub)
 						- env
+						- region
+						- workerType
+						- workers
 					- Add the needed secure variables. Following the exampple for a CloudHub deployment:
+					    - username
 						- password
 
 					- Click "Save"
