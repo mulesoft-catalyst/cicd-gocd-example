@@ -38,6 +38,11 @@ docker pull jrandall/gocd-agent-ubuntu-18.04-docker
 
 Before starting the Agent make sure the GO_SERVER_URL environment variable is configured pointing to the image where the server is running.
 
+During start up you should be able to check the logs of the image to see if the attachment is beign performed correctly. Also,
+after started, you should be able to see the Agent listen on the "Agents" tab in GoCD main page
+
+![Alt text](images/adding-agents.png)
+
 #### Installing Maven
 
 ```
