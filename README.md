@@ -147,5 +147,11 @@ Once complete the execution of the pipeline, you can check the output of each of
 ![Alt text](images/deploy-output.png)
 ![Alt text](images/testing-app-output.png)
 
+# Contribution
+Want to contribute? Great!
 
+Just fork the repo, make your updates and open a pull request!
+
+# License
+MIT
 
