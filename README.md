@@ -3,7 +3,7 @@
 A example pipeline usign GoCD like CI Server tool.
 
 # The example App
-For this PoC a simple Mule app will be used, containing:
+For this PoC we'll use a basic Mule API, containing:
    - HTTP Lister listening on port 8081
    - Path under /api/v1/
    - Only one resource called healthcheck which will be used for connectivity testing after deployment
@@ -13,7 +13,7 @@ For this PoC a simple Mule app will be used, containing:
 
 # Environment Config
 
-For this example we will use a containairized version of GoCD Server and Agent, both created using a **Docker** image.
+For this example we'll use a containairized version of GoCD Server and Agent, both created using a **Docker** image.
 
 ## GoCD Config
 
