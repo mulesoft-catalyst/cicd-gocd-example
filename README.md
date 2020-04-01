@@ -1,6 +1,6 @@
 # GoCD Example Pipeline with Mule
 
-A example pieline usign GoCD like CI Server tool.
+A example pipeline usign GoCD like CI Server tool.
 
 # The example App
 For this a simple Mule app will be used, containing:
