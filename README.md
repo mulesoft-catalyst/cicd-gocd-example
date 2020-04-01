@@ -4,7 +4,7 @@ A example pipeline usign GoCD like CI Server tool.
 
 # The example App
 For this PoC we'll use a basic Mule API, containing:
-   - HTTP Lister listening on port 8081
+   - HTTP Listener listening on port 8081
    - Path under /api/v1/
    - Only one resource called healthcheck which will be used for connectivity testing after deployment
    - Mule Maven Plugin with the cloudhubDeployment	configuration applied
