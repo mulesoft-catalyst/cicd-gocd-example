@@ -22,6 +22,7 @@ For this example we'll use a containairized version of GoCD Server and Agent, bo
 ```
 docker pull gocd/gocd-server
 ```
+Note: at the moment of writing this article the latest stable version is v19.12.0
 
 After running the image and accesing the UI url we'll get:
 ![Alt text](images/server-starting.png)
