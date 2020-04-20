@@ -8,8 +8,8 @@ For this PoC we'll use a basic Mule API, containing:
    - Path under /api/v1/
    - Only one resource called healthcheck which will be used for connectivity testing after deployment
    - Mule Maven Plugin with the cloudhubDeployment	configuration applied
-   - MUnit simple test to perform MUnit testing before packaging the app
-
+   - Simple MUnit to test the app before packaging
+   - NOTE: you'll require a settings.xml specifying credentials for releases-ee repository 
 
 # Environment Config
 
@@ -30,7 +30,7 @@ Once the server gets started, you'll see the following button in the upper cente
 ![Alt text](images/server-ready.png)
 
 ### Agent Config
-A custom image based on Ubuntu was choosen because it contains Java and cUrl already installed and run under user root by default.
+A custom image based on Ubuntu was chosen because it contains Java and cUrl already installed and run under user root by default.
 Alpine based and other official versions images are available too.
 
 ```
@@ -78,14 +78,14 @@ https://github.com/ruckc/gocd-maven-plugin/releases/tag/0.1.1
 
 # Pipeline Config
 
-The propossed pipeline is a simple MVP to show how to integrate with Mule. This means we'll use one single pipeline with different stages on it. One single material configured (Github) will trigger the execution of this simple pipeline. 
+The proposed pipeline is a simple MVP to show how to integrate with Mule. This means we'll use one single pipeline with different stages on it. One single material configured (Github) will trigger the execution of this simple pipeline. 
 
 - To create a pipeline click on "+ Add new pipeline"
-	- First of all, configure a new material of type "git". Grab the repo url (HTTPS can be used) and paste it inside the Repository URL field
+	- First of all, configure a new material of type "git". Grab the repo url (HTTPS can be used) and paste it inside the Repository URL field. NOTE: The example repository is a Public repo. If the repository to use  is a private one, extra SSH keys configuration will be needed. 
 		- Test the connectivity to ensure you entered the proper URL
 		- We'll skip advanced settings since this is a public repo that only contains one branch (master). However, consider that a more complex branching strategy will require more configuration
 	- Enter the pipeline name. In this example we use the convention mule-${appName} to identify a mule app since the CI server can be used for other totally different purposes too.
-		- Skip advanced settings since, again, the only parameters  we'll be using is the ones passed as argument for Deploy phase, and those can be environment variables inside the pipeline, instead arguments 
+		- Skip advanced settings since, again, the only parameters  we'll be using is the ones passed as argument for Deploy phase, and those can be environment variables inside the pipeline, instead of arguments 
 
 ## Build Stage
 This will package and test the application. For the sake of simplicity of this how-to, we'll keep the generated artifact in the GoCD filesystem, without versioning the binary using an external repo like Jfrog Artifactory or Nexus. However, it's strongly recommended to do that.
@@ -93,12 +93,12 @@ This will package and test the application. For the sake of simplicity of this h
 - The following configs should be configured as part of the pipeline config
 	- Set Stage Name as "build-and-test" in the "Part 3: Stage Details"
 		- We'll skip advance settings since we want to trigger the pipeline for every upcoming change notified by Github
-	- Complete Part: Job and Tasks setting Job Name and giving "mvn package" as the command.
+	- Complete Part: "Job and Tasks" setting Job Name with a meaningful name and entering "mvn package" as the command.
 		- skip advanced settings since we don't need environment variables this time
 	- Click on Save + Edit full config to configure the Deploy Stage
 
 ## Deploy Stage
-This pipeline will get the packaged application (.jar) deloy it to Anypoint Platform and perform a quick connectivity healthcheck to ensure the application is up and running after deployment.
+This pipeline will get the packaged application (.jar) deploy it to Anypoint Platform and perform a quick connectivity healthcheck to ensure the application is up and running after deployment.
 - From the pipeline configuration
 	- Click on tab "Stages"
 		- Click on "+ Add new stage"
@@ -108,7 +108,7 @@ This pipeline will get the packaged application (.jar) deloy it to Anypoint Plat
 				- mvn-deploy for Job Name
 				- Task Type "More"
 				- On Lookup Commands enter Shell and select shell script
-				- the command will be /bin/sh and the argument will be deployment.sh (this shellscrit will be provided by the application)
+				- the command will be /bin/sh and the argument will be deployment.sh (this shellscript will be provided by the application)
 				- Click Save
 		- Click on the deloy-and-test stage
 			- Go to "Jobs"
