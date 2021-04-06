@@ -153,6 +153,3 @@ Want to contribute? Great!
 
 Just fork the repo, make your updates and open a pull request!
 
-# License
-MIT
-
